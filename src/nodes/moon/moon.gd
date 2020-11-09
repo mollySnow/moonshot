@@ -8,8 +8,7 @@ onready var body = $RigidBody2D
 onready var gravity_orbit = $GravityFieldOrbit
 
 func _ready():
-	print("moon.gd")
-	print(bullet_layer)
+	Signals.gun_shot_connect(self, "_on_Gun_gun_shot")
 
 func _process(_delta):
 	gravity_orbit.rotation = body.position.angle()

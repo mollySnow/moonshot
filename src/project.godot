@@ -19,10 +19,14 @@ config/name="moonshot"
 run/main_scene="res://nodes/world/world_root.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Signals="*res://events/signals.gd"
+
 [display]
 
-window/size/width=2395
-window/size/height=1231
+window/size/width=720
+window/size/height=1280
 mouse_cursor/custom_image="res://icon.png"
 
 [input]

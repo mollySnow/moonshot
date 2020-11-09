@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://nodes/moon/moon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
 
 [node name="WorldRoot" type="Node2D"]
 position = Vector2( 1224.23, 561.562 )
@@ -19,3 +20,6 @@ orbit_node_path = NodePath("..")
 bullet_layer_path = NodePath("../../Bullets")
 
 [node name="Bullets" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
