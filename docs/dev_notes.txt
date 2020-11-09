@@ -1,0 +1,19 @@
+- todo
+    + distribution
+        - auto builds?
+        - android?
+        - pc?
+    + graphics
+        - particles
+        _ ui
+        - background
+        - icons
+        - tech-tree, graph? tabs? tooltips?
+        - earth, lunar
+    + gamedesign
+        - gravity system
+        - enemies, design? only spaceships? or monsters?
+        - weapons, missiles? lasers?
+        - story?
+        
+
