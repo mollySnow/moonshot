@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://nodes/gun/Gun.gd" type="Script" id=1]
+[ext_resource path="res://nodes/moon/pngwing.com.png" type="Texture" id=2]
+
+
+[node name="Gun" type="Node2D"]
+script = ExtResource( 1 )
+force = 3
+
+[node name="Sprite2" type="Sprite" parent="."]
+rotation = -2.1485
+scale = Vector2( 0.0633442, 0.202578 )
+texture = ExtResource( 2 )
+offset = Vector2( -600, 320 )
+
+[node name="BarrelEnd" type="Position2D" parent="."]
+position = Vector2( 121.953, -7.18028 )
+scale = Vector2( 727.731, 331969 )
