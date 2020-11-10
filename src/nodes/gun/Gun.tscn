@@ -3,7 +3,6 @@
 [ext_resource path="res://nodes/gun/Gun.gd" type="Script" id=1]
 [ext_resource path="res://nodes/moon/pngwing.com.png" type="Texture" id=2]
 
-
 [node name="Gun" type="Node2D"]
 script = ExtResource( 1 )
 force = 3
