@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Moon test.png-717db838e62e23d8980dd3d3ae96dd2d.stex"
+path="res://.import/pixil-frame-0.png-75b018f187c1957ea32c4acba14a933c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://nodes/moon/Moon test.png"
-dest_files=[ "res://.import/Moon test.png-717db838e62e23d8980dd3d3ae96dd2d.stex" ]
+source_file="res://nodes/moon/assets/pixil-frame-0.png"
+dest_files=[ "res://.import/pixil-frame-0.png-75b018f187c1957ea32c4acba14a933c.stex" ]
 
 [params]
 

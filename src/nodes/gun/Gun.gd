@@ -1,20 +1,14 @@
 extends Node2D
 
-onready var end_of_barrel = $BarrelEnd
-onready var bullet_packed = preload("res://nodes/bullet/bullet.tscn")
+onready var bullet_spawn_point: Position2D = $Node2D/BulletSpawnPoint
+onready var gun_sprite: Sprite = $Node2D/GunSprite
+onready var rotate_node: Node2D = $Node2D
 
-export var force = 2;
+func _process(_delta):
+	rotate_node.rotation = get_local_mouse_position().angle()
 
-# Called when the node enters the scene tree for the first time.
-var mouse_position = Vector2.ZERO
-
-func shoot():
-	var direction = (end_of_barrel.global_position - global_position).normalized()
-	var boom = 500
-	var bullet = bullet_packed.instance()
-	bullet.set_name("why")
-	get_parent().get_parent().bullet_layer.add_child(bullet)
-	bullet.global_position = end_of_barrel.global_position
-	bullet.linear_velocity = direction * boom
-	bullet.rotation = direction.angle()
-	Signals.gun_shot_emit(-(end_of_barrel.global_position - global_position), force)
+func shoot(bullet_system: BulletSystem) -> Vector2:
+	var boom = 400
+	var velocity = (bullet_spawn_point.global_position - global_position).normalized() * boom
+	bullet_system.new_bullet("normal", velocity, bullet_spawn_point)
+	return -(bullet_spawn_point.global_position - global_position) * 2

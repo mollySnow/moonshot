@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pngwing.com.png-2ac50e179b6926efb5a3e4cd4baa4162.stex"
+path="res://.import/Moonring test.png-8791875781cf98ab4d6879b3f76e0080.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://nodes/moon/pngwing.com.png"
-dest_files=[ "res://.import/pngwing.com.png-2ac50e179b6926efb5a3e4cd4baa4162.stex" ]
+source_file="res://nodes/moon/assets/Moonring test.png"
+dest_files=[ "res://.import/Moonring test.png-8791875781cf98ab4d6879b3f76e0080.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

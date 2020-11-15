@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "BulletSystem",
+"language": "GDScript",
+"path": "res://nodes/BulletSystem/BulletSystem.gd"
+} ]
 _global_script_class_icons={
-
+"BulletSystem": ""
 }
 
 [application]
@@ -22,6 +27,14 @@ config/icon="res://icon.png"
 [autoload]
 
 Signals="*res://events/signals.gd"
+
+[debug]
+
+gdscript/warnings/treat_warnings_as_errors=true
+gdscript/warnings/unsafe_property_access=true
+gdscript/warnings/unsafe_method_access=true
+gdscript/warnings/unsafe_cast=true
+gdscript/warnings/unsafe_call_argument=true
 
 [display]
 

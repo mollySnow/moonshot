@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://nodes/moon/pixil-frame-0.png" type="Texture" id=1]
+[ext_resource path="res://nodes/moon/assets/pixil-frame-0.png" type="Texture" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 9.68664

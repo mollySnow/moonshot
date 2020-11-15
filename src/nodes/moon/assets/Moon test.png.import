@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Gun test.png-f183bc15ab1e52cae24e4c6c8703e34d.stex"
+path="res://.import/Moon test.png-ae7037474557120dbbcf2bcf35df77b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://nodes/moon/Gun test.png"
-dest_files=[ "res://.import/Gun test.png-f183bc15ab1e52cae24e4c6c8703e34d.stex" ]
+source_file="res://nodes/moon/assets/Moon test.png"
+dest_files=[ "res://.import/Moon test.png-ae7037474557120dbbcf2bcf35df77b0.stex" ]
 
 [params]
 
