@@ -9,7 +9,6 @@
 radius = 48.5183
 
 [node name="Moon" type="RigidBody2D"]
-position = Vector2( 400, 0 )
 script = ExtResource( 3 )
 
 [node name="MoonShape" type="CollisionShape2D" parent="."]
@@ -17,10 +16,6 @@ shape = SubResource( 1 )
 
 [node name="MoonSprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-drag_margin_left = 0.66
 
 [node name="MoonRingSprite" type="Sprite" parent="."]
 texture = ExtResource( 4 )

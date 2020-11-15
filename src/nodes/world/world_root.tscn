@@ -1,15 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://nodes/moon/Moon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodes/world/Eearth test.png" type="Texture" id=2]
 [ext_resource path="res://nodes/BulletSystem/BulletSystem.tscn" type="PackedScene" id=3]
 [ext_resource path="res://nodes/TrackingGravityField/TrackingGravityField.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/world/Camera2D.gd" type="Script" id=5]
 
 [node name="WorldRoot" type="Node2D"]
-position = Vector2( 1224.23, 561.562 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -20,4 +17,11 @@ texture = ExtResource( 2 )
 orbiting_path = NodePath("../Moon")
 
 [node name="Moon" parent="." instance=ExtResource( 1 )]
+position = Vector2( 400, 0 )
 bullet_system_path = NodePath("../BulletSystem")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 5 )
+start_path = NodePath("../Moon")
+camera_move_divider = 4
