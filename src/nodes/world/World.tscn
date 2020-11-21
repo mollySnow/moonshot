@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://nodes/world/Camera2D.gd" type="Script" id=1]
+[ext_resource path="res://nodes/BulletSystem/BulletSystem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://nodes/TrackingGravityField/TrackingGravityField.tscn" type="PackedScene" id=3]
+[ext_resource path="res://nodes/moon/Moon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/world/Eearth test.png" type="Texture" id=5]
+[ext_resource path="res://nodes/moon/assets/Moonring test.png" type="Texture" id=6]
+[ext_resource path="res://nodes/RotatingBody/RotatingBody.gd" type="Script" id=7]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 47.2853
+
+[node name="WorldRoot" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
+[node name="BulletSystem" parent="." instance=ExtResource( 2 )]
+
+[node name="TrackingGravityField" parent="." instance=ExtResource( 3 )]
+orbiting_path = NodePath("../Moon")
+
+[node name="Moon" parent="." instance=ExtResource( 4 )]
+position = Vector2( 793.778, -234.932 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 1 )
+start_path = NodePath("../Moon")
+camera_move_divider = 4
+
+[node name="RotatingBody" type="Node2D" parent="."]
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+speed = 3
+
+[node name="RigidBody2D" type="RigidBody2D" parent="RotatingBody"]
+position = Vector2( 400, 0 )
+collision_layer = 3
+collision_mask = 0
+mode = 3
+
+[node name="Sprite" type="Sprite" parent="RotatingBody/RigidBody2D"]
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RotatingBody/RigidBody2D"]
+shape = SubResource( 1 )
