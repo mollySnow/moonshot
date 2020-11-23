@@ -22,7 +22,7 @@ texture = ExtResource( 5 )
 orbiting_path = NodePath("../Moon")
 
 [node name="Moon" parent="." instance=ExtResource( 4 )]
-position = Vector2( 793.778, -234.932 )
+position = Vector2( 786.096, -355.389 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -32,10 +32,7 @@ camera_move_divider = 4
 
 [node name="RotatingBody" type="Node2D" parent="."]
 script = ExtResource( 7 )
-__meta__ = {
-"_edit_group_": true
-}
-speed = 3
+speed = 1
 
 [node name="RigidBody2D" type="RigidBody2D" parent="RotatingBody"]
 position = Vector2( 400, 0 )

@@ -1,16 +1,17 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://nodes/moon/assets/Moon test.png" type="Texture" id=1]
 [ext_resource path="res://nodes/PlayerController/PlayerController.gd" type="Script" id=2]
-[ext_resource path="res://nodes/moon/AIController.gd" type="Script" id=3]
+[ext_resource path="res://nodes/Controller/AutoUpdatingMovementController.gd" type="Script" id=3]
 [ext_resource path="res://nodes/moon/assets/Moonring test.png" type="Texture" id=4]
 [ext_resource path="res://nodes/Gun/Gun.tscn" type="PackedScene" id=5]
+[ext_resource path="res://nodes/Gun/crosshair.png" type="Texture" id=6]
+[ext_resource path="res://nodes/Generic/OnEnterDetector.tscn" type="PackedScene" id=7]
+[ext_resource path="res://nodes/Controller/AutoWeaponController.gd" type="Script" id=8]
+[ext_resource path="res://nodes/Controller/AutoMovementController.gd" type="Script" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 48.5183
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 553.191
 
 [node name="Moon" type="RigidBody2D"]
 mode = 2
@@ -31,14 +32,31 @@ script = ExtResource( 2 )
 body_path = NodePath("..")
 gun_system_path = NodePath("../Gun")
 
-[node name="AIController" type="Node2D" parent="."]
-script = ExtResource( 3 )
+[node name="AutoWeaponController" type="Node2D" parent="."]
+script = ExtResource( 8 )
+weapon_system_path = NodePath("../Gun")
+
+[node name="OnEnterDetector" parent="AutoWeaponController" instance=ExtResource( 7 )]
+node_path = NodePath("../../AutoWeaponController")
+radius = 500
+
+[node name="AutoMovementController" type="Node2D" parent="."]
+script = ExtResource( 9 )
 body_path = NodePath("..")
-gun_system_path = NodePath("../Gun")
 
-[node name="DetectionArea" type="Area2D" parent="AIController"]
-collision_layer = 0
-collision_mask = 2
+[node name="OnEnterDetector" parent="AutoMovementController" instance=ExtResource( 7 )]
+node_path = NodePath("..")
+radius = 800
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AIController/DetectionArea"]
-shape = SubResource( 2 )
+[node name="Sprite" type="Sprite" parent="AutoMovementController"]
+texture = ExtResource( 6 )
+
+[node name="AutoUpdatingMovementController" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="OnEnterDetector" parent="AutoUpdatingMovementController" instance=ExtResource( 7 )]
+node_path = NodePath("..")
+radius = 300
+
+[node name="Aim" type="Sprite" parent="AutoUpdatingMovementController"]
+texture = ExtResource( 6 )
