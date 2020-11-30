@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://nodes/Generic/OnEnterDetector.tscn" type="PackedScene" id=1]
+[ext_resource path="res://nodes/Gun/crosshair.png" type="Texture" id=2]
+[ext_resource path="res://nodes/Generic/OnEnterDetector.gd" type="Script" id=3]
+[ext_resource path="res://nodes/Controller/AutoMovementController.gd" type="Script" id=4]
+
+[node name="AutoMovementController" type="Node2D"]
+script = ExtResource( 4 )
+body_path = NodePath("..")
+
+[node name="OnEnterDetector" type="Area2D" parent="." instance=ExtResource( 1 )]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 3 )
+node_path = NodePath("..")
+radius = 800
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )

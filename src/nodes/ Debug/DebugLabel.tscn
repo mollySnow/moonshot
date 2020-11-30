@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://nodes/ Debug/label.gd" type="Script" id=1]
+
+[node name="Debug" type="Node2D"]
+position = Vector2( 21.3575, 14.5568 )
+script = ExtResource( 1 )
+watch_object = NodePath("../../AutoUpdatingMovementController")
+member = "current_state"
+
+[node name="Label" type="Label" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}

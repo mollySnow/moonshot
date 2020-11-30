@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://nodes/world/Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://nodes/BulletSystem/BulletSystem.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://nodes/world/Eearth test.png" type="Texture" id=5]
 [ext_resource path="res://nodes/moon/assets/Moonring test.png" type="Texture" id=6]
 [ext_resource path="res://nodes/RotatingBody/RotatingBody.gd" type="Script" id=7]
+[ext_resource path="res://nodes/Generic/Movable.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 47.2853
@@ -45,3 +46,5 @@ texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RotatingBody/RigidBody2D"]
 shape = SubResource( 1 )
+
+[node name="Movable" parent="." instance=ExtResource( 8 )]

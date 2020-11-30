@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://nodes/moon/assets/Moon test.png" type="Texture" id=1]
 [ext_resource path="res://nodes/PlayerController/PlayerController.gd" type="Script" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://nodes/Gun/crosshair.png" type="Texture" id=6]
 [ext_resource path="res://nodes/Generic/OnEnterDetector.tscn" type="PackedScene" id=7]
 [ext_resource path="res://nodes/Controller/AutoWeaponController.gd" type="Script" id=8]
-[ext_resource path="res://nodes/Controller/AutoMovementController.gd" type="Script" id=9]
+[ext_resource path="res://nodes/ Debug/label.gd" type="Script" id=9]
+[ext_resource path="res://nodes/ Debug/DebugLabel.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 48.5183
@@ -40,19 +41,9 @@ weapon_system_path = NodePath("../Gun")
 node_path = NodePath("../../AutoWeaponController")
 radius = 500
 
-[node name="AutoMovementController" type="Node2D" parent="."]
-script = ExtResource( 9 )
-body_path = NodePath("..")
-
-[node name="OnEnterDetector" parent="AutoMovementController" instance=ExtResource( 7 )]
-node_path = NodePath("..")
-radius = 800
-
-[node name="Sprite" type="Sprite" parent="AutoMovementController"]
-texture = ExtResource( 6 )
-
 [node name="AutoUpdatingMovementController" type="Node2D" parent="."]
 script = ExtResource( 3 )
+body_path = NodePath("..")
 
 [node name="OnEnterDetector" parent="AutoUpdatingMovementController" instance=ExtResource( 7 )]
 node_path = NodePath("..")
@@ -60,3 +51,33 @@ radius = 300
 
 [node name="Aim" type="Sprite" parent="AutoUpdatingMovementController"]
 texture = ExtResource( 6 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 48, 48 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Debug" parent="Node2D" instance=ExtResource( 10 )]
+
+[node name="Velocity" type="Node2D" parent="Node2D"]
+position = Vector2( 21.3575, 28.5568 )
+script = ExtResource( 9 )
+watch_object = NodePath("../..")
+member = "linear_velocity"
+
+[node name="Label" type="Label" parent="Node2D/Velocity"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Forces" type="Node2D" parent="Node2D"]
+position = Vector2( 21.3575, 42.5568 )
+script = ExtResource( 9 )
+watch_object = NodePath("../..")
+member = "applied_force"
+
+[node name="Label" type="Label" parent="Node2D/Forces"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
